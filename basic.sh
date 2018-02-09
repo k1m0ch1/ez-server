@@ -79,6 +79,17 @@ if echo "$answer" | grep -iq "^y" ;then
 
 	mv phpMyAdmin-4.7.7-all-languages pm4-pUb
 
+	ccd="$(curl -s http://whatismyip.akamai.com/)"
+
+	echo "== Scripting Done"
+	echo "To access default index using http://${ccd}"
+	echo "To check php info using http://${ccd}"
+	echo "To access phpmyadmin using http://${ccd}/pm4-pUb/index.php"
+	echo "== Default configuration"
+	echo "to add nginx configration can create file configuration at /etc/nginx/conf/ with .conf extension"
+	echo "user nginx using nginx"
+	echo "user php using www-data"
+
 else
     echo "exit"
 fi
