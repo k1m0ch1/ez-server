@@ -2,6 +2,8 @@
 
 echo "== run this bash script as root"
 
+apt-get update
+
 apt-get install git build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev libxml2-dev libcurl4-openssl-dev automake pkgconf htop curl unzip
 
 cd /tmp
@@ -55,3 +57,15 @@ php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 nginx
 nginx -s reload
 /etc/init.d/php7.1-fpm restart
+
+apt-get install mysql-server
+mysql_secure_installation
+systemctl status mysql.service
+
+cd /etc/nginx/html
+
+wget https://files.phpmyadmin.net/phpMyAdmin/4.7.7/phpMyAdmin-4.7.7-all-languages.zip
+
+unzip phpMyAdmin-4.7.7-all-languages.zip
+
+mv phpMyAdmin-4.7.7-all-languages pm4-pUb
