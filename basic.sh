@@ -37,6 +37,10 @@ mkdir /etc/nginx/conf.d
 cp /root/ez-server/conf/nginx/nginx.conf /etc/nginx/nginx.conf
 cp /root/ez-server/conf/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
+mv /etc/nginx/html/index.html /etc/nginx/html/backupindex
+
+cp /root/ez-server/conf/nginx/html/index.html /etc/nginx/html/index.html
+
 echo "<?php phpinfo(); ?>" > info.php
 
 apt-get install -y python-software-properties; add-apt-repository -y ppa:ondrej/php; apt-get update -y; apt-cache pkgnames | grep php7.1
